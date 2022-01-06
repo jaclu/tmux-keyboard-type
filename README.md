@@ -15,6 +15,9 @@ Display|Description
 ![connecting](/assets/Screenshot-hidden.png) | US keyboard, defined as hidden.
 
 
+## Limitations
+
+I use this on MacOS, so there it is well tested, I have included some Linux code to detect current keyboard, but that is not yet well tested. Windows has not been done yet, any help with getting it to detect keyboards on more environments would be greatly apreciated!
 ## Usage
 
 ```tmux.conf
@@ -57,8 +60,10 @@ $ tmux source-file ~/.tmux.conf
 
 ## Configuration
 
-To disable a setting, set it to " ", spaces will be trimmed and thus nothing will end up being printed, if you set it to "" it will be ignored and any previously set value will be used, this might cause unintended confusion if you change someting and then reload the config. On a restart of tmux this will not be an issue.
+To disable a setting without restarting tmux, set it to " ", spaces will be trimmed and thus nothing will end up being used. If you set it to "" it will be ignored and any previously set value (if any) will be used, this might cause unintended confusion if you change someting and then reload the config. On a restart of tmux this will not be an issue.
+
 The exception is prefix/suffix, they will honour "" as dont show anything.
+
 Variable|My settings|Purpose
 -|-|-
 @keyboard_type_hidden | "U.S."<br><br> If you want to give multiple values, use \| as item separator. | I mosly use US keyboard, occationally switching to Swedish or Dutch, so in my case I only want to be notified if I am not using the US one.
