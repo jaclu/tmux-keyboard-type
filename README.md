@@ -3,6 +3,7 @@
 
 Plugin that shows current keyboard layout. Since there is already a plugin called tmux-keyboard-layout, I used a different name for this one. Personally I think this one does a better job :) Anyhow that one motivated me to do this one, so kudos to it for giving me inspiration to improve on that concept!
 
+
 ## Screenshots
 
 Here both aliasing and hidden features are displayed.
@@ -14,13 +15,16 @@ Display|Description
 ![connecting](/assets/Screenshot-hidden.png) | US keyboard, defined as hidden.
 
 
-### Usage
+## Usage
 
 ```tmux.conf
 set -g status-right '#{keyboard_type}'
 ```
 
-### Installation with Tmux Plugin Manager (recommended)
+
+## Installation 
+
+### With Tmux Plugin Manager (recommended)
 
 Add plugin to the list of TPM plugins:
 
@@ -29,6 +33,7 @@ set -g @plugin 'jaclu/tmux-keyboard-type'
 ```
 
 Press prefix + I to install it.
+
 
 ### Manual Installation
 
@@ -50,11 +55,9 @@ Reload TMUX environment with:
 $ tmux source-file ~/.tmux.conf
 ```
 
-### Configurations
+## Configuration
 
-## Variables that can be set
-
-To disable a setting, set it to " ", spaces will be trimmed and thus nothing will end up being printed, if you set it to "" it will be ignored and the default value will be used.
+To disable a setting, set it to " ", spaces will be trimmed and thus nothing will end up being printed, if you set it to "" it will be ignored and any previously set value will be used, this might cause unintended confusion if you change someting and then reload the config. On a restart of tmux this will not be an issue.
 The exception is prefix/suffix, they will honour "" as dont show anything.
 Variable|My settings|Purpose
 -|-|-
@@ -66,6 +69,6 @@ Variable|My settings|Purpose
 @keyboard_type_suffix  | " "      | 
 
 
-### License
+#### License
 
 [MIT](LICENSE)
