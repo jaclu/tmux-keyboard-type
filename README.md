@@ -1,7 +1,7 @@
 
-# Tmux Keyboard Layout plugin
+# Tmux Keyboard Type plugin
 
-Plugin that shows current keyboard layout.
+Plugin that shows current keyboard layout. Since there is already a plugin called tmux-keyboard-layout, I used a different name for this one. Personally I think this one does a better job, and that one motivated me to do this one, so kudos to it for giving me inspiration to improve on that concept!
 
 ### Usage
 
@@ -47,7 +47,7 @@ To disable a setting, set it to " ", spaces will be trimmed and thus nothing wil
 The exception is prefix/suffix, they will honour "" as dont show anything.
 Variable|Example|Purpose
 -|-|-
-@keyboard_type_hidden | "U.S."<br><br> If you want to give multiple values, use \| as item separator. | I mosly use US keyboard, occationally switching to Swedish or Dutch, so in my case I only want to be notified if I am not using the US one.
+@keyboard_type_hidden | "U.S.\|USInternational-PC"<br><br> If you want to give multiple values, use \| as item separator. | I mosly use US keyboard, occationally switching to Swedish or Dutch, so in my case I only want to be notified if I am not using the US one.
 @keyboard_type_aliases | "Sv=Swedish-Pro\|US=U.S."<br><br> If you want to give multiple values, use \| as item separator. Each item should be alias=match_str | Use aliases for display.
 @keyboard_type_fg      |          | Sets color 
 @keyboard_type_bg      | "green"  | Sets color
