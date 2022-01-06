@@ -74,6 +74,13 @@ Variable|My settings|Purpose
 @keyboard_type_suffix  | " "      | 
 
 
+## Contributing
+
+Contributions are welcome, and they are greatly appreciated! Every little bit helps, and credit will always be given.
+
+The best way to send feedback is to file an issue at https://github.com/jaclu/tmux-keyboard-type/issues
+
+
 #### License
 
 [MIT](LICENSE)
