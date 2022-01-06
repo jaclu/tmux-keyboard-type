@@ -68,9 +68,9 @@ Variable|My settings|Purpose
 -|-|-
 @keyboard_type_hidden | "U.S."<br><br> If you want to give multiple values, use \| as item separator. | I mosly use US keyboard, occationally switching to Swedish or Dutch, so in my case I only want to be notified if I am not using the US one.
 @keyboard_type_aliases | "Sv=Swedish-Pro\|US=U.S."<br><br> If you want to give multiple values, use \| as item separator. Each item should be alias=match_str | Use aliases for display.
-@keyboard_type_fg      |          | Sets color 
+@keyboard_type_fg      | ""       | Sets color 
 @keyboard_type_bg      | "green"  | Sets color
-@keyboard_type_prefix  | ""      | Give it some space when displayed. Saves you from putting permanent spacers in your status line, especially if you hide some keyboards it avoids spacers arround not displayed items.
+@keyboard_type_prefix  | ""       | Give it some space when displayed. Saves you from putting permanent spacers in your status line, especially if you hide some keyboards it avoids spacers arround not displayed items.
 @keyboard_type_suffix  | " "      | 
 
 
