@@ -15,7 +15,7 @@ display_keyboard_type() {
     if [ "$os" = "Darwin" ]; then
         keyb_name="$(defaults read ~/Library/Preferences/com.apple.HIToolbox.plist AppleSelectedInputSources | grep "KeyboardLayout Name" | cut -f 2 -d "=" | tr -d ' ;' | tr -d '"')"
     elif [ "$os" = "Linux" ]; then
-        # Havent gotten this to work yet...
+        # Haven't gotten this to work yet...
         keyb_name="$(localectl status |grep Layout | awk '{ print $3 }')"
     else
         # Need to test this in Windows...
@@ -38,7 +38,7 @@ display_keyboard_type() {
 
 
     #
-    #  Go through the list of keyboard_types with an alias and use that 
+    #  Go through the list of keyboard_types with an alias and use that
     #  if matched. This needs to match what your OS reports, so once you see
     #  a keyboard_type being displayed, that is the pattern you should give
     #  an alias to match.
@@ -46,12 +46,12 @@ display_keyboard_type() {
     #  Syntax: @keyboard_type_aliases="Sv=Swedish-Pro|US=U.S."
     #    separator: |
     #    display=For this match
-    #  
+    #
     aliases=$(get_tmux_option "@keyboard_type_aliases")
     create_lst "$aliases" "|"
 
     for alias_pair in "${lst[@]}"; do
-        alias_replace="${alias_pair%%=*}"  # upto first = excluding it
+        alias_replace="${alias_pair%%=*}"  # up to first = excluding it
         alias_match="${alias_pair#*=}"     # after fist =
         if [ "$keyb_name" = "$alias_match" ]; then
             keyb_name="$alias_replace"
@@ -62,7 +62,7 @@ display_keyboard_type() {
 
     #
     #  Wrap it in colors
-    #  
+    #
     #  Config: @keyboard_type_fg=""
     #          @keyboard_type_bg="green"
     #

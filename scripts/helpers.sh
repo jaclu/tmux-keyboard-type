@@ -19,7 +19,7 @@ get_tmux_option() {
 set_tmux_option() {
     local option="$1"
     local value="$2"
-    
+
     tmux set-option -gq "$option" "$value"
 }
 
@@ -28,10 +28,10 @@ set_tmux_option() {
 trim() {
     local txt="$*"
 
-    # remove leading whitespace characters
+    # remove leading white space characters
     txt="${txt#"${txt%%[![:space:]]*}"}"
 
-    # remove trailing whitespace characters
+    # remove trailing white space characters
     txt="${txt%"${txt##*[![:space:]]}"}"
 
     echo "$txt"
@@ -74,14 +74,14 @@ color_statement() {
         echo "#[fg=$fg]"
     elif [ -z "$fg" ] && [ -n "$bg" ]; then
         echo "#[bg=$bg]"
-    fi    
+    fi
 }
 
 
 #
 #  If color is defined for current status, wrap text in a color statement
 #  txt param should not be trimmed here, since it might intentionally contain
-#  leading or traling spaces
+#  leading or trailing spaces
 #
 color_wrap() {
     txt="$1"
