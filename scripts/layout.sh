@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
-
+#
+#   Copyright (c) 2022: Jacob.Lundqvist@gmail.com
+#   License: MIT
+#
+#   Part of https://github.com/jaclu/tmux-keyboard-type
+#
+#   Version: 1.1.0 2022-04-13
+#
 
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}"  )" && pwd  )"
 
@@ -32,7 +39,8 @@ display_keyboard_type() {
     dont_show=$(get_tmux_option "@keyboard_type_hidden")
 
     create_lst "$dont_show" "|"
-    if [[ " ${lst[*]} " =~ " ${keyb_name} " ]]; then
+    # shellcheck disable=SC2154
+    if [[ " ${lst[*]} " =~ ${keyb_name} ]]; then
         return
     fi
 

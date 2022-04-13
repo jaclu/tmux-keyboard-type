@@ -1,4 +1,12 @@
 #!/usr/bin/env bash
+#
+#   Copyright (c) 2022: Jacob.Lundqvist@gmail.com
+#   License: MIT
+#
+#   Part of https://github.com/jaclu/tmux-keyboard-type
+#
+#   Version: 1.1.0 2022-04-13
+#
 
 set -euo pipefail
 

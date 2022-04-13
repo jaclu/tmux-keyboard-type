@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
-
+#
+#   Copyright (c) 2022: Jacob.Lundqvist@gmail.com
+#   License: MIT
+#
+#   Part of https://github.com/jaclu/tmux-keyboard-type
+#
+#   Version: 1.1.0 2022-04-13
+#
 
 get_tmux_option() {
     local option="$1"
@@ -56,6 +63,7 @@ create_lst() {
     [ -z "$txt" ] && return
 
     IFS=$sepparator
+    # shellcheck disable=SC2034,SC2162
     read -a lst  <<< "$txt"
     unset IFS
 }
