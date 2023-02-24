@@ -22,6 +22,10 @@ I use this on MacOS, so there it is well tested, I have included some Linux code
 set -g status-right '#{keyboard_type}'
 ```
 
+## Dependencies
+
+`tmux 1.9` `MacOS`
+
 ## Installation
 
 ### With Tmux Plugin Manager (recommended)
