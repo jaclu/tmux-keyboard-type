@@ -8,22 +8,21 @@
 #   Version: 1.1.0 2022-04-13
 #
 
-CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}"  )" && pwd  )"
+CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # shellcheck disable=SC1091
 source "$CURRENT_DIR/helpers.sh"
-
 
 display_keyboard_type() {
     #
     #  Identify keyboard_type layout
     #
     os=$(uname -s)
-    if [ "$os" = "Darwin" ]; then
+    if [[ "$os" = "Darwin" ]]; then
         keyb_name="$(defaults read ~/Library/Preferences/com.apple.HIToolbox.plist AppleSelectedInputSources | grep "KeyboardLayout Name" | cut -f 2 -d "=" | tr -d ' ;' | tr -d '"')"
-    elif [ "$os" = "Linux" ]; then
+    elif [[ "$os" = "Linux" ]]; then
         # Haven't gotten this to work yet...
-        keyb_name="$(localectl status |grep Layout | awk '{ print $3 }')"
+        keyb_name="$(localectl status | grep Layout | awk '{ print $3 }')"
     else
         # Need to test this in Windows...
         keyb_name="Failed to detect OS"
@@ -44,7 +43,6 @@ display_keyboard_type() {
         return
     fi
 
-
     #
     #  Go through the list of keyboard_types with an alias and use that
     #  if matched. This needs to match what your OS reports, so once you see
@@ -59,14 +57,13 @@ display_keyboard_type() {
     create_lst "$aliases" "|"
 
     for alias_pair in "${lst[@]}"; do
-        alias_replace="${alias_pair%%=*}"  # up to first = excluding it
-        alias_match="${alias_pair#*=}"     # after fist =
-        if [ "$keyb_name" = "$alias_match" ]; then
+        alias_replace="${alias_pair%%=*}" # up to first = excluding it
+        alias_match="${alias_pair#*=}"    # after fist =
+        if [[ "$keyb_name" = "$alias_match" ]]; then
             keyb_name="$alias_replace"
             break
         fi
     done
-
 
     #
     #  Wrap it in colors
@@ -78,7 +75,6 @@ display_keyboard_type() {
     #
     keyb_display="$(color_wrap "$keyb_name")"
 
-
     #
     #  Include  prefix/suffix if given, otherwise this wont change anything
     #
@@ -89,6 +85,5 @@ display_keyboard_type() {
     #
     affix_wrap "$keyb_display"
 }
-
 
 display_keyboard_type

@@ -16,8 +16,7 @@
 #  impact. In all calls to tmux I use $TMUX_BIN instead in the rest of this
 #  plugin.
 #
-[ -z "$TMUX_BIN" ] && TMUX_BIN="tmux"
-
+[[ -z "$TMUX_BIN" ]] && TMUX_BIN="tmux"
 
 get_tmux_option() {
     local option="$1"
@@ -33,15 +32,12 @@ get_tmux_option() {
     fi
 }
 
-
 set_tmux_option() {
     local option="$1"
     local value="$2"
 
     $TMUX_BIN set-option -gq "$option" "$value"
 }
-
-
 
 trim() {
     local txt="$*"
@@ -55,7 +51,6 @@ trim() {
     echo "$txt"
 }
 
-
 #
 #  Creates variable lst
 #  This will be created from param one
@@ -65,20 +60,19 @@ create_lst() {
     local txt="$1"
     local sepparator="$2"
 
-    if [ -z "$sepparator" ]; then
+    if [[ -z "$sepparator" ]]; then
         echo "ERROR: create_lst() param 2 not given!"
         exit 1
     fi
 
     lst=()
-    [ -z "$txt" ] && return
+    [[ -z "$txt" ]] && return
 
     IFS=$sepparator
     # shellcheck disable=SC2034,SC2162
-    read -a lst  <<< "$txt"
+    read -a lst <<<"$txt"
     unset IFS
 }
-
 
 color_statement() {
     local fg
@@ -87,15 +81,14 @@ color_statement() {
     fg="$(trim "$1")"
     bg="$(trim "$2")"
 
-    if [ -n "$fg" ] && [ -n "$bg" ]; then
+    if [[ -n "$fg" ]] && [[ -n "$bg" ]]; then
         echo "#[fg=$fg,bg=$bg]"
-    elif [ -n "$fg" ] && [ -z "$bg" ]; then
+    elif [[ -n "$fg" ]] && [[ -z "$bg" ]]; then
         echo "#[fg=$fg]"
-    elif [ -z "$fg" ] && [ -n "$bg" ]; then
+    elif [[ -z "$fg" ]] && [[ -n "$bg" ]]; then
         echo "#[bg=$bg]"
     fi
 }
-
 
 #
 #  If color is defined for current status, wrap text in a color statement
@@ -105,11 +98,11 @@ color_statement() {
 color_wrap() {
     txt="$1"
 
-    [ -z "$txt" ] && return
+    [[ -z "$txt" ]] && return
 
     color_fg=$(get_tmux_option "@keyboard_type_fg")
     color_bg=$(get_tmux_option "@keyboard_type_bg")
-    if [ -z "$color_fg" ] && [ -z "$color_bg" ]; then
+    if [[ -z "$color_fg" ]] && [[ -z "$color_bg" ]]; then
         # if neither are set
         echo "$txt"
         return
@@ -118,7 +111,6 @@ color_wrap() {
     color_prefix=$(color_statement "$color_fg" "$color_bg")
     echo "${color_prefix}${txt}#[default]"
 }
-
 
 #
 #  Wrap text in defined prefix and suffix
