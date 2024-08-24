@@ -43,7 +43,7 @@ Press prefix + I to install it.
 Clone the repo:
 
 ```bash
-$ git clone https://github.com/jaclu/tmux-keyboard-type.git ~/clone/path
+git clone https://github.com/jaclu/tmux-keyboard-type.git ~/clone/path
 ```
 
 Add this line to your .tmux.conf:
@@ -55,7 +55,7 @@ run-shell ~/clone/path/keyboard-type.tmux
 Reload TMUX environment with:
 
 ```bash
-$ tmux source-file ~/.tmux.conf
+tmux source-file ~/.tmux.conf
 ```
 
 ## Configuration
@@ -77,8 +77,8 @@ The exception is prefix/suffix, they will honor "" as don't show anything.
 
 Contributions are welcome, and they are greatly appreciated! Every little bit helps, and credit will always be given.
 
-The best way to send feedback is to file an issue at https://github.com/jaclu/tmux-keyboard-type/issues
+The best way to send feedback is to file an issue at [issues](https://github.com/jaclu/tmux-keyboard-type/issues)
 
-#### License
+### License
 
 [MIT](LICENSE)
