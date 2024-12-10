@@ -76,7 +76,7 @@ display_keyboard_type() {
     keyb_display="$(color_wrap "$keyb_name")"
 
     #
-    #  Include  prefix/suffix if given, otherwise this wont change anything
+    #  Include  prefix/suffix if given, otherwise this won't change anything
     #
     #  Config: @keyboard_type_prefix=" "
     #          @keyboard_type_suffix=" "
