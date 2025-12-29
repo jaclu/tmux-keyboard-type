@@ -13,7 +13,6 @@
 #  shellcheck disable=SC1007
 CURRENT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 
-
 cd "$CURRENT_DIR" || return
 
 checkables=(
