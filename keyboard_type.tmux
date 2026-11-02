@@ -24,11 +24,11 @@ keyboard_commands=(
 )
 
 do_interpolation() {
-    local all_interpolated="$1"
+    local all_i="$1"
     for ((i = 0; i < ${#keyboard_commands[@]}; i++)); do
-        all_interpolated=${all_interpolated//${keyboard_interpolation[$i]}/${keyboard_commands[$i]}}
+        all_i=${all_i//${keyboard_interpolation[$i]}/${keyboard_commands[$i]}}
     done
-    echo "$all_interpolated"
+    echo "$all_i"
 }
 
 update_tmux_option() {

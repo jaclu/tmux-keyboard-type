@@ -19,7 +19,9 @@ display_keyboard_type() {
     #
     os=$(uname -s)
     if [[ "$os" = "Darwin" ]]; then
-        keyb_name="$(defaults read ~/Library/Preferences/com.apple.HIToolbox.plist AppleSelectedInputSources | grep "KeyboardLayout Name" | cut -f 2 -d "=" | tr -d ' ;' | tr -d '"')"
+        keyb_name="$(defaults read ~/Library/Preferences/com.apple.HIToolbox.plist \
+            AppleSelectedInputSources | grep "KeyboardLayout Name" | cut -f 2 -d "=" \
+            | tr -d ' ;' | tr -d '"')"
     elif [[ "$os" = "Linux" ]]; then
         # Haven't gotten this to work yet...
         keyb_name="$(localectl status | grep Layout | awk '{ print $3 }')"
