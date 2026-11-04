@@ -1,6 +1,9 @@
 # Tmux Keyboard Type plugin
 
-Plugin that shows current keyboard layout. Since there is already a plugin called tmux-keyboard-layout, I used a different name for this one. Personally I think this one does a better job :) Anyhow that one motivated me to do this one, so kudos to it for giving me inspiration to improve on that concept!
+Plugin that shows current keyboard layout. Since there is already a plugin called
+tmux-keyboard-layout, I used a different name for this one. Personally I think this
+one does a better job :) Anyhow that one motivated me to do this one,
+so kudos to it for giving me inspiration to improve on that concept!
 
 ## Screenshots
 
@@ -14,7 +17,10 @@ Here both aliasing and hidden features are displayed.
 
 ## Limitations
 
-I use this on MacOS, so there it is well tested, I have included some Linux code to detect current keyboard, but that is not yet well tested. Windows has not been done yet, any help with getting it to detect keyboards on more environments would be greatly appreciated!
+I use this on MacOS, so there it is well tested, I have included some Linux code to
+detect current keyboard, but that is not yet well tested. Windows has not been done yet,
+any help with getting it to detect keyboards on more environments would be greatly
+appreciated!
 
 ## Usage
 
@@ -60,7 +66,11 @@ tmux source-file ~/.tmux.conf
 
 ## Configuration
 
-To disable a setting without restarting tmux, set it to " ", spaces will be trimmed and thus nothing will end up being used. If you set it to "" it will be ignored and any previously set value (if any) will be used, this might cause unintended confusion if you change something and then reload the config. On a restart of tmux this will not be an issue.
+To disable a setting without restarting tmux, set it to " ", spaces will be trimmed and
+thus nothing will end up being used. If you set it to "" it will be ignored and any
+previously set value (if any) will be used, this might cause unintended confusion if
+you change something and then reload the config. On a restart of tmux this will not
+be an issue.
 
 The exception is prefix/suffix, they will honor "" as don't show anything.
 
@@ -75,9 +85,11 @@ The exception is prefix/suffix, they will honor "" as don't show anything.
 
 ## Contributing
 
-Contributions are welcome, and they are greatly appreciated! Every little bit helps, and credit will always be given.
+Contributions are welcome, and they are greatly appreciated! Every little bit helps,
+and credit will always be given.
 
-The best way to send feedback is to file an issue at [issues](https://github.com/jaclu/tmux-keyboard-type/issues)
+The best way to send feedback is to file an issue at
+[issues](https://github.com/jaclu/tmux-keyboard-type/issues)
 
 ### License
 
